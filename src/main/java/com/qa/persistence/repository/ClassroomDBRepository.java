@@ -40,21 +40,35 @@ public class ClassroomDBRepository implements ClassroomRepository{
 		return "{\"message\": \"classroom has been successfully added\"}";
 	}
 	
-	
+	@Transactional(REQUIRED)
 	public String updateClassroom(Long id, String classroom) {
-		
+		Classroom aClassroom = findClassroom(id);
+		manager.remove(aClassroom);
+		Classroom newClassroom = util.getObjectForJSON(classroom, Classroom.class);
+		manager.persist(newClassroom);
 
-		
-		return null;
+		return "{\"message\": \"account has been successfully updated\"}";
 	}
 
-	
-	
-	
-	
-	
+	@Transactional(REQUIRED)
 	public String deleteClassroom(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+			Classroom classroomFromDB = findClassroom(id);
+			if(classroomFromDB != null) {
+				manager.remove(classroomFromDB);
+			}
+			return "{\"message\": \"account has been successfully deleted\"}";
+		}
+	
+	public Classroom findClassroom(Long id) {
+		return manager.find(Classroom.class, id);
+		}
+	
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
 	}
+
+	public void setUtil(JSONUtil util) {
+		this.util = util;
+	}
+
 }
