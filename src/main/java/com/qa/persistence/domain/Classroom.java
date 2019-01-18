@@ -21,6 +21,7 @@ public class Classroom {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Long id;
+	@Column (name = "Trainer_Name")
 	private String trainer;
 
 	

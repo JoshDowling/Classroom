@@ -20,12 +20,14 @@ public class Trainees {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Long traineeID;
+	@Column (name = "Trainee_Name")
 	private String traineeName;
+	@Column (name = "Classroom_Name")
 	private Long id;
 	
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	@JoinColumn (name = "classroomID")
-//	private List<Classroom> classroom;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn (name = "id")
+	private List<Classroom> classroom;
 
 	public Trainees() {
 		
