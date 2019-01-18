@@ -1,11 +1,14 @@
 package com.qa.persistence.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -22,22 +25,16 @@ public class Trainees {
 	private String traineeName;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	private Classroom classroom;
+	@JoinColumn (name = "traineeID")
+	private List<Classroom> classroom;
 
+	
 
-	public Classroom getClassroom() {
-		return classroom;
-	}
-
-
-	public void setClassroom(Classroom classroom) {
-		this.classroom = classroom;
-	}
-
-
-	public void Classroom(Long traineeID, String traineeName) {
+	public Trainees(Long traineeID, String traineeName) {
+		super();
 		this.traineeID = traineeID;
 		this.traineeName = traineeName;
+		
 	}
 
 
