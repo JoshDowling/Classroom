@@ -24,22 +24,22 @@ public class Classroom {
 	private String trainer;
 
 	
-//	@OneToMany (fetch = FetchType.EAGER)
-//	@JoinColumn (name = "classroomID")
-//	private List<Classroom> classroom;
-//	
-//	
-//	private List<Trainees> trainees;
-//	
-//		
-//	public List<Trainees> getTrainees() {
-//		return trainees;
-//	}
-// 
-//
-//	public void setTrainees(List<Trainees> trainees) {
-//		this.trainees = trainees;
-//	}
+	@OneToMany (fetch = FetchType.EAGER)
+	@JoinColumn (name = "id")
+	private List<Classroom> classroom;
+	
+	
+	private List<Trainees> trainees;
+	
+		
+	public List<Trainees> getTrainees() {
+		return trainees;
+	}
+ 
+
+	public void setTrainees(List<Trainees> trainees) {
+		this.trainees = trainees;
+	}
 
 
 	public Classroom() {

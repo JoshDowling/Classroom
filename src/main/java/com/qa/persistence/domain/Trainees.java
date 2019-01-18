@@ -27,7 +27,9 @@ public class Trainees {
 //	@JoinColumn (name = "classroomID")
 //	private List<Classroom> classroom;
 
-	
+	public Trainees() {
+		
+	}
 
 	public Trainees(Long traineeID, String traineeName, Long classroomID) {
 		super();
