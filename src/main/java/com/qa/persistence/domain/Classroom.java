@@ -17,7 +17,7 @@ public class Classroom {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long id;
+	private Long classroomID;
 	
 	@Column(name = "Trainer_Name")
 	private String trainer;
@@ -26,7 +26,7 @@ public class Classroom {
 	private Long traineeID;
 	
 	@OneToMany (mappedBy = "classroom")
-	@JoinColumn (name = "traineeID")
+	@JoinColumn (name = "classroomID")
 	private List<Trainees> trainees;
 	
 		
@@ -44,7 +44,7 @@ public class Classroom {
 
 	public Classroom(Long id, String trainer, Long traineeID) {
 		super();
-		this.id = id;
+		this.classroomID = id;
 		this.trainer = trainer;
 		this.traineeID = traineeID;
 		
@@ -52,13 +52,13 @@ public class Classroom {
 
 
 	public Long getClassroomId() {
-		return id;
+		return classroomID;
 	}
 
 
 
 	public void setClassroomId(Long classroomId) {
-		this.id = classroomId;
+		this.classroomID = classroomId;
 	}
 
 
