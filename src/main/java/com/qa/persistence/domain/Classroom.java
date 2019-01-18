@@ -17,7 +17,7 @@ public class Classroom {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long classroomId;
+	private Long id;
 	
 	@Column(name = "Trainer_Name")
 	private String trainer;
@@ -33,18 +33,16 @@ public class Classroom {
 	public List<Trainees> getTrainees() {
 		return trainees;
 	}
-
-
+ 
 
 	public void setTrainees(List<Trainees> trainees) {
 		this.trainees = trainees;
 	}
 
 
-
 	public Classroom(Long classroomId, String trainer, Long traineeID) {
 		super();
-		this.classroomId = classroomId;
+		this.id = classroomId;
 		this.trainer = trainer;
 		this.traineeID = traineeID;
 	}
@@ -52,15 +50,14 @@ public class Classroom {
 
 
 	public Long getClassroomId() {
-		return classroomId;
+		return id;
 	}
 
 
 
 	public void setClassroomId(Long classroomId) {
-		this.classroomId = classroomId;
+		this.id = classroomId;
 	}
-
 
 
 	public String getTrainer() {
@@ -68,11 +65,9 @@ public class Classroom {
 	}
 
 
-
 	public void setTrainer(String trainer) {
 		this.trainer = trainer;
 	}
-
 
 
 	public Long getTraineeID() {
