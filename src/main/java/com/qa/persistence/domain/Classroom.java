@@ -21,9 +21,7 @@ public class Classroom {
 	
 	@Column(name = "Trainer_Name")
 	private String trainer;
-	
-	@Column(name = "Trainees")
-	private Long traineeID;
+
 	
 	@OneToMany (mappedBy = "classroom")
 	@JoinColumn (name = "classroomID")
@@ -46,7 +44,7 @@ public class Classroom {
 		super();
 		this.classroomID = id;
 		this.trainer = trainer;
-		this.traineeID = traineeID;
+		
 		
 	}
 
@@ -71,15 +69,5 @@ public class Classroom {
 		this.trainer = trainer;
 	}
 
-
-	public Long getTraineeID() {
-		return traineeID;
-	}
-
-
-
-	public void setTraineeID(Long traineeID) {
-		this.traineeID = traineeID;
-	}
 	
 }
