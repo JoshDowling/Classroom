@@ -24,13 +24,16 @@ public class Trainees {
 	@Column(name = "Trainee_Name")
 	private String traineeName;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn (name = "traineeID")
+	@Column(name = "Classroom_ID")
+	private Long classroomID;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn (name = "classroomID")
 	private List<Classroom> classroom;
 
 	
 
-	public Trainees(Long traineeID, String traineeName) {
+	public Trainees(Long traineeID, String traineeName, Long classroomID) {
 		super();
 		this.traineeID = traineeID;
 		this.traineeName = traineeName;
