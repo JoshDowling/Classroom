@@ -1,3 +1,2 @@
-INSERT INTO ACCOUNT (id, firstname, secondname, accountnumber) VALUES (1, 'John', 'Doe', '1234')
-INSERT INTO ACCOUNT (id, firstname, secondname, accountnumber) VALUES (2, 'Jane', 'Doe', '1235')
-INSERT INTO ACCOUNT (id, firstname, secondname, accountnumber) VALUES (3, 'Jim', 'Taylor', '1236')
+INSERT INTO CLASSROOM (id, trainer) VALUES (1, 'John Gordon');
+INSERT INTO CLASSROOM (id, trainer) VALUES (2, 'Matt Hunt');

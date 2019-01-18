@@ -1,9 +1,12 @@
 package com.qa.persistence.domain;
 
 import java.util.List;
+import java.util.Set;
 
+import javax.enterprise.inject.Default;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,38 +14,41 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
-@Table (name = "Classroom" )
 public class Classroom {
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	private Long classroomID;
-	
-	@Column(name = "Trainer_Name")
+	private Long id;
 	private String trainer;
 
 	
-	@OneToMany (mappedBy = "classroom")
-	@JoinColumn (name = "classroomID")
-	private List<Trainees> trainees;
-	
+//	@OneToMany (fetch = FetchType.EAGER)
+//	@JoinColumn (name = "classroomID")
+//	private List<Classroom> classroom;
+//	
+//	
+//	private List<Trainees> trainees;
+//	
+//		
+//	public List<Trainees> getTrainees() {
+//		return trainees;
+//	}
+// 
+//
+//	public void setTrainees(List<Trainees> trainees) {
+//		this.trainees = trainees;
+//	}
+
+
+	public Classroom() {
 		
-	public List<Trainees> getTrainees() {
-		return trainees;
 	}
- 
-
-	public void setTrainees(List<Trainees> trainees) {
-		this.trainees = trainees;
-	}
-
-
-
 
 	public Classroom(Long id, String trainer, Long traineeID) {
 		super();
-		this.classroomID = id;
+		this.id = id;
 		this.trainer = trainer;
 		
 		
@@ -50,13 +56,13 @@ public class Classroom {
 
 
 	public Long getClassroomId() {
-		return classroomID;
+		return id;
 	}
 
 
 
 	public void setClassroomId(Long classroomId) {
-		this.classroomID = classroomId;
+		this.id = classroomId;
 	}
 
 

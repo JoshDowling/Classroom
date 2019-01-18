@@ -17,19 +17,15 @@ public class Trainees {
 
 
 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Long traineeID;
-
-	@Column(name = "Trainee_Name")
 	private String traineeName;
-
-	@Column(name = "Classroom_ID")
-	private Long classroomID;
+	private Long id;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn (name = "classroomID")
-	private List<Classroom> classroom;
+//	@ManyToOne(fetch = FetchType.EAGER)
+//	@JoinColumn (name = "classroomID")
+//	private List<Classroom> classroom;
 
 	
 
@@ -63,5 +59,6 @@ public class Trainees {
 	public void setTraineeName(String traineeName) {
 		this.traineeName = traineeName;
 	}
+
 
 }

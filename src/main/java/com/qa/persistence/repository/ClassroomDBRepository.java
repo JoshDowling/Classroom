@@ -17,7 +17,6 @@ import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 @Default
-
 public class ClassroomDBRepository implements ClassroomRepository{	
 	
 	//tells manager to look into the persistence.xml to use the persistence unit called primary
